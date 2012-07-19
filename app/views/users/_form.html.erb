@@ -1,0 +1,10 @@
+<%= semantic_form_for @user do |f| %>
+	  <%= f.semantic_errors %>
+	  <%= f.inputs do %>
+	    <%= f.input :email,   :hint => "Enter the origami artwork's name" %>
+	  <% end %>
+         <%= select_tag 'user[pets][]', options_for_select(["cat", "dog","bird"], @states_selected), { :multiple => true, :size =>5} %></p>
+	  <%= f.buttons do %>
+	    <%= f.commit_button :button_html => {:class => "primary"} %>
+	  <% end %>
+<% end %>
